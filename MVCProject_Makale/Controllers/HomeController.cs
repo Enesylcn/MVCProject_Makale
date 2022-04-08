@@ -28,7 +28,8 @@ namespace MVCProject_Makale.Controllers
             //int b = 0;
             //int sonuc = a / b;
 
-           
+            NoteYonet ny = new NoteYonet();
+
 
 
             //return View(ny.NotListesi().OrderByDescending(x => x.ModifiedDate).ToList());
@@ -197,7 +198,7 @@ namespace MVCProject_Makale.Controllers
             Session.Clear();
             return RedirectToAction("Index");
         }
-
+        
         public ActionResult HataliErisim()
         {
             return View();

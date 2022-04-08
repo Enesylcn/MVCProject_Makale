@@ -66,6 +66,7 @@ namespace MVCProject_Makale.Controllers
         public ActionResult SetLiked(int notid,bool liked) //sayı dizisi
         {
             Kullanici user = (Kullanici)Session["login"];
+
             int sonuc = 0;
             if (user==null)
             {
@@ -113,7 +114,7 @@ namespace MVCProject_Makale.Controllers
             }
             return View(note);
         }
-
+        
         [Auth]
         public ActionResult Create()
         {
@@ -217,6 +218,6 @@ namespace MVCProject_Makale.Controllers
             return PartialView("_PartialNotDetay",note);
         }
 
-
+        
     }
 }

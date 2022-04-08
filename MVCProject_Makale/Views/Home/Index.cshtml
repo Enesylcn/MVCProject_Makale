@@ -47,49 +47,49 @@
             <div class="row">
                 @foreach (var item in Model)
                 {
-    <div class="col-sm-4 col-lg-4 col-md-4" data-notid="@item.ID">
-        <div class="thumbnail">
-            @*<img src="http://placehold.it/320x150" alt="">*@
-            <div class="caption">
-                <h6 class="text-right">
-                    <span class="glyphicon glyphicon-user"></span>@item.Kullanici.Username <br />
-                    <span class="glyphicon glyphicon-time"></span>@item.ModifiedDate.ToString("dd.MM.yy HH:mm") @*tarih saat dakika*@
-                </h6>
-                <h4>
+                    <div class="col-sm-4 col-lg-4 col-md-4" data-notid="@item.ID">
+                        <div class="thumbnail">
+                            @*<img src="http://placehold.it/320x150" alt="">*@
+                            <div class="caption">
+                                <h6 class="text-right">
+                                    <span class="glyphicon glyphicon-user"></span>@item.Kullanici.Username <br />
+                                    <span class="glyphicon glyphicon-time"></span>@item.ModifiedDate.ToString("dd.MM.yy HH:mm") @*tarih saat dakika*@
+                                </h6>
+                                <h4>
                     <a href="#" data-notid="@item.ID" data-toggle="modal" data-target="#ModalNote">@item.Title</a>
-                </h4>
+                                </h4>
 
-                @if (item.Text.Length > 80)
-                {
-<p>@(item.Text.Substring(0,80))</p>
+                                @if (item.Text.Length > 80)
+                                {
+                                    <p>@(item.Text.Substring(0,80))</p>
                     <p>
                         <a href="#" class="btn btn-default btn-sm" data-notid="@item.ID" data-toggle="modal" data-target="#ModalNote">
                             devamı<span class="glyphicon glyphicon-chevron-right"></span>
                         </a>
                     </p> }
-                else
-                {
+                                else
+                                {
 @item.Text}
 
-            </div>
-            <div>
-                <hr />
-            </div>
-            <div class="ratings">
-                <p class="pull-right">
-                    <button class="btn btn-default btn-sm" data-notid="@item.ID" data-toggle="modal" data-target="#ModalComment">
-                        @*yorumlar butonu üzerinde o notun id sini taşıyoruz*@
-                        <span class="glyphicon glyphicon-comment "></span> Yorumlar
-                    </button>
-                </p>
-                <p>
-                    <button class="btn btn-default btn-sm" type="button" data-notid="@item.ID" data-liked="false">
-                        <span class="glyphicon glyphicon-heart-empty like-heart"></span>&nbsp;
-                        <span class="like-count"> @item.LikeCount</span>
-                    </button>
-                </p>
-            </div>
-        </div>
+                            </div>
+                            <div>
+                                <hr />
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right">
+                                    <button class="btn btn-default btn-sm" data-notid="@item.ID" data-toggle="modal" data-target="#ModalComment">
+                                        @*yorumlar butonu üzerinde o notun id sini taşıyoruz*@
+                                        <span class="glyphicon glyphicon-comment "></span> Yorumlar
+                                    </button>
+                                </p>
+                                <p>
+                                    <button class="btn btn-default btn-sm" type="button" data-notid="@item.ID" data-liked="false">
+                                        <span class="glyphicon glyphicon-heart-empty like-heart"></span>&nbsp;
+                                        <span class="like-count"> @item.LikeCount</span>
+                                    </button>
+                                </p>
+                            </div>
+                        </div>
     </div>}
 
             </div>
@@ -107,21 +107,21 @@
 
 <!-- Modal Yorum -->
 <div class="modal fade" id="ModalComment" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header" id="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Yorumlar</h4>
-                </div>
-                <div class="modal-body" id="modal-body">
-                    ...
-                </div>
-                <div class="modal-footer" id="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header" id="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Yorumlar</h4>
+            </div>
+            <div class="modal-body" id="modal-body">
+                ...
+            </div>
+            <div class="modal-footer" id="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
+</div>
 
 
 @Bootstrap.ModalPopup("ModalNote");
